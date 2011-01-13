@@ -25,7 +25,7 @@ setup(name='plonetheme.jqueryui',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'collective.js.jqueryui'
+          'collective.js.jqueryui',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
@@ -34,6 +34,4 @@ setup(name='plonetheme.jqueryui',
       [z3c.autoinclude.plugin]
       target = plone
       """,
-      setup_requires=["PasteScript"],
-      paster_plugins=["ZopeSkel"],
       )
