@@ -1,0 +1,6 @@
+<layers>
+    <layer
+        name="plonetheme.jqueryui"
+        interface="plonetheme.jqueryui.interfaces.IJQueryUIThemeLayer"
+        />
+</layers>

@@ -26,7 +26,6 @@ setup(name='plonetheme.jqueryui',
       install_requires=[
           'setuptools',
           'collective.js.jqueryui',
-          'plone.app.theming'
           # -*- Extra requirements: -*-
       ],
       entry_points="""

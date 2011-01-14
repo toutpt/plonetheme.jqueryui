@@ -1,0 +1,3 @@
+<registry>
+  <records interface="plonetheme.jqueryui.interfaces.IJQueryUIThemeSettings" />
+</registry>
