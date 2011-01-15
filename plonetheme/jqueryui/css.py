@@ -28,5 +28,9 @@ def handle_registry_modified(settings, event):
         pass
 
     #NEXT: add the new one
-    csstool.registerStylesheet(settings.cdn%(settings.version, settings.theme))
-    csstool.cookResources()
+    try:
+        csstool.registerStylesheet(settings.cdn%(settings.version, settings.theme))
+        csstool.cookResources()
+    except:
+        pass
+

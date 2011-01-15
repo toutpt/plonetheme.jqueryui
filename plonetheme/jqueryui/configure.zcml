@@ -1,13 +1,16 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
     xmlns:five="http://namespaces.zope.org/five"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="plonetheme.jqueryui">
 
+  <include package="plone.app.registry"/>
   <five:registerPackage package="." initialize=".initialize" />
+  <cmf:registerDirectory name="plonetheme_jqueryui" />
 
   <genericsetup:registerProfile
       name="default"
@@ -16,12 +19,14 @@
       description="Installs the plonetheme.jqueryui package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-  <!-- -*- extra stuff goes here -*- -->
+
   <browser:page
     for="*"
     name="plonetheme.jqueryui-controlpanel"
     class=".controlpanel.JQueryUIThemeControlPanelView"
     permission="zope2.View"
     />
+
   <subscriber handler=".css.handle_registry_modified" />
+
 </configure>

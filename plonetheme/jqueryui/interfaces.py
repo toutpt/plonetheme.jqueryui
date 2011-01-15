@@ -16,4 +16,5 @@ class IJQueryUIThemeSettings(interface.Interface):
                            description=i18n.desc_cdn,
                            required=False)
 
-    theme = schema.ASCIILine(title=i18n.label_theme)
+    theme = schema.ASCIILine(title=i18n.label_theme,
+                             required=False)

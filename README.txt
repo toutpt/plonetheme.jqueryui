@@ -8,10 +8,9 @@ with the themeroller app.
 TODO
 ====
 
+* Remove the need of javascript
 * Provide JQueryUI preloaded themes
 * Embed JQueryUI ThemeRoller web app
-* Let the webmaster build its own theme within Plone (TTW)
-
 
 JQueryUI Preloaded Themes
 =========================
