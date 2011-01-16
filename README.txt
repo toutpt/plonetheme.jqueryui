@@ -3,7 +3,7 @@ Introduction
 
 JQueryUI is already available with collective.js.jqueryui package.
 This package try to integrate css framework ok JQueryUI in Plone
-with the themeroller app.
+with the ability to build a theme and to import a theme.
 
 TODO
 ====
@@ -15,7 +15,8 @@ TODO
 JQueryUI Preloaded Themes
 =========================
 
-#TODO
+There are a set of available theme define by jqueryui itself. All of them
+are available and can be used just by selecting it in the add-on backoffice.
 
 JQueryUI ThemeRoller web app
 ============================

@@ -4,6 +4,9 @@ PRELOADEDS = ('base', 'black-tie', 'blitzer', 'cupertino', 'dark-hive',
               'redmond', 'smoothness','south-street','start','sunny',
               'swanky-purse','trontastic','ui-darkness','ui-lightness','vader')
 
+CUSTOM_THEMEID = 'custom'
+BASE_THEMEID = 'sunburst'
+
 VERSION = '1.8.7'
 CDN_URL = 'http://ajax.googleapis.com/ajax/libs/jqueryui/%s/themes/%s/jquery-ui.css'
 

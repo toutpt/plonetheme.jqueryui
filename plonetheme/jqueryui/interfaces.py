@@ -1,8 +1,16 @@
 from zope import interface
 from zope import schema
+from zope.schema import vocabulary
 
 from plonetheme.jqueryui import i18n
 from plonetheme.jqueryui import config
+
+themes = []
+themes.append(vocabulary.SimpleVocabulary.createTerm(config.BASE_THEMEID,config.BASE_THEMEID,config.BASE_THEMEID))
+themes.append(vocabulary.SimpleVocabulary.createTerm(config.CUSTOM_THEMEID,config.CUSTOM_THEMEID,config.CUSTOM_THEMEID))
+for theme in config.PRELOADEDS:
+    themes.append(vocabulary.SimpleTerm(theme, theme, theme))
+theme_vocabulary = vocabulary.SimpleVocabulary(themes)
 
 class IJQueryUIThemeLayer(interface.Interface):
     """Browser layer"""
@@ -15,10 +23,12 @@ class IJQueryUIThemeSettings(interface.Interface):
 
     cdn = schema.ASCIILine(title=i18n.label_cdn,
                            description=i18n.desc_cdn,
+                           default=config.CDN_URL,
                            required=False)
 
-    theme = schema.ASCIILine(title=i18n.label_theme,
-                             required=False)
+    theme = schema.Choice(title=i18n.label_theme,
+                          required=True,
+                          vocabulary=theme_vocabulary)
 
 
 class IJQueryUITheme(interface.Interface):

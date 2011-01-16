@@ -28,6 +28,7 @@ setup(name='plonetheme.jqueryui',
           'collective.js.jqueryui',
           'collective.z3cform.colorpicker',
           'plone.app.registry',
+          'plone.transformchain'
           # -*- Extra requirements: -*-
       ],
       entry_points="""

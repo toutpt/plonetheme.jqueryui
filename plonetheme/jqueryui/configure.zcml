@@ -9,9 +9,12 @@
     i18n_domain="plonetheme.jqueryui">
 
   <include package="plone.app.registry"/>
+  <include package="plone.transformchain"/>
   <include package="collective.z3cform.colorpicker"/>
   <five:registerPackage package="." initialize=".initialize" />
   <cmf:registerDirectory name="plonetheme_jqueryui" />
+
+  <adapter factory=".transform.JQueryUITransform" name="plonetheme.jqueryui.transform" />
 
   <genericsetup:registerProfile
       name="default"
