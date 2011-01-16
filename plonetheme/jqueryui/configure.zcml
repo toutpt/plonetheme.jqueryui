@@ -9,6 +9,7 @@
     i18n_domain="plonetheme.jqueryui">
 
   <include package="plone.app.registry"/>
+  <include package="collective.z3cform.colorpicker"/>
   <five:registerPackage package="." initialize=".initialize" />
   <cmf:registerDirectory name="plonetheme_jqueryui" />
 
@@ -21,10 +22,16 @@
       />
 
   <browser:page
-    for="*"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
     name="plonetheme.jqueryui-controlpanel"
-    class=".controlpanel.JQueryUIThemeControlPanelView"
-    permission="zope2.View"
+    class=".controlpanel.MainControlPanelView"
+    permission="cmf.ManagePortal"
+    />
+  <browser:page
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    name="plonetheme.jqueryui-custom-controlpanel"
+    class=".controlpanel.CustomControlPanelView"
+    permission="cmf.ManagePortal"
     />
 
   <subscriber handler=".css.handle_registry_modified" />

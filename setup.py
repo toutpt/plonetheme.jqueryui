@@ -26,6 +26,7 @@ setup(name='plonetheme.jqueryui',
       install_requires=[
           'setuptools',
           'collective.js.jqueryui',
+          'collective.z3cform.colorpicker',
           'plone.app.registry',
           # -*- Extra requirements: -*-
       ],

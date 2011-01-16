@@ -52,7 +52,8 @@ var removeRule = function(selector, styleCSS, styleJS) {
 };
 
 var getRulesOfSheetDOM = function(sheet) {
-    if (sheet.cssRules.length) {
+    try {
+	
     if (sheet.cssRules[0].cssRules) {
         return sheet.cssRules[0].cssRules;
     }
@@ -60,7 +61,7 @@ var getRulesOfSheetDOM = function(sheet) {
 
         return sheet.cssRules[0].styleSheet.cssRules[0].cssRules;
     }
-    }
+    } catch (e) {}
     return [];
 }
 
