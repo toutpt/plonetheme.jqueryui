@@ -2,6 +2,7 @@ from zope import interface
 from zope import schema
 
 from plonetheme.jqueryui import i18n
+from plonetheme.jqueryui import config
 
 class IJQueryUIThemeLayer(interface.Interface):
     """Browser layer"""
@@ -168,7 +169,10 @@ class IJQueryUITheme(interface.Interface):
                                  default='5px')
 
 from plone.autoform.interfaces import WIDGETS_KEY
-from collective.z3cform.colorpicker.colorpicker import ColorpickerFieldWidget
 
-IJQueryUITheme.setTaggedValue(WIDGETS_KEY,
-                              {'bgColorHeader': ColorpickerFieldWidget})
+COLOR_WIDGETS = {}
+for i in config.THEME_SETTINGS:
+    if 'color' not in i.lower():continue
+    COLOR_WIDGETS[i] = 'collective.z3cform.colorpicker.colorpicker.ColorpickerFieldWidget'
+
+IJQueryUITheme.setTaggedValue(WIDGETS_KEY, COLOR_WIDGETS)
