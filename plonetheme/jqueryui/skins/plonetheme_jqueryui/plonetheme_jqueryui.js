@@ -505,15 +505,3 @@ var enableEditBar2 = function() {
     jq('dd.actionMenuContent li a').css('padding-left', '3px').css('padding-right', '3px');
     }
 }
-jq(document).ready(function() {
-    enableDialogs();
-    enableEditBar();
-    enableFonts();
-    enableFooter();
-    enableForms();
-    forms_are_enabled = true;
-    enableGlobalTabs();
-    enablePersonalTool();
-    enablePortlets(); 
-    removeRules();
-});

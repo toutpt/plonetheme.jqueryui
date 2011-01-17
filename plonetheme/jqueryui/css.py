@@ -5,19 +5,9 @@ from plonetheme.jqueryui import interfaces
 @component.adapter(interfaces.IJQueryUIThemeSettings, IRecordModifiedEvent)
 def handle_registry_modified(settings, event):
     #FIRST: remove old resource
-    oldcdn = oldversion = oldtheme = None
-    if event.record.fieldName == 'version':
-        oldversion = event.oldValue
-        oldcdn = settings.cdn
-        oldtheme = settings.theme
-    elif event.record.fieldName == 'cdn':
-        oldcdn = event.oldValue
-        oldversion = settings.version
-        oldtheme = settings.theme
-    elif event.record.fieldName == 'theme':
+    oldtheme = None
+    if event.record.fieldName == 'theme':
         oldtheme = event.oldValue
-        oldcdn = settings.cdn
-        oldversion = settings.version
 
     plone = component.getSiteManager()
     csstool = plone.portal_css
@@ -33,4 +23,3 @@ def handle_registry_modified(settings, event):
         csstool.cookResources()
     except:
         pass
-
