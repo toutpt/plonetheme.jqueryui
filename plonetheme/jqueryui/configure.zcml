@@ -16,7 +16,8 @@
   <five:registerPackage package="." initialize=".initialize" />
   <cmf:registerDirectory name="plonetheme_jqueryui" />
 
-  <adapter factory=".transform.JQueryUITransform" name="plonetheme.jqueryui.transform" />
+<!--  <adapter factory=".transform.JQueryUITransform" name="plonetheme.jqueryui.transform" />
+-->
 
   <genericsetup:registerProfile
       name="default"
@@ -29,6 +30,12 @@
   <browser:page
     for="Products.CMFPlone.interfaces.IPloneSiteRoot"
     name="plonetheme.jqueryui-controlpanel"
+    template="controlpanel_main.pt"
+    permission="cmf.ManagePortal"
+    />
+  <browser:page
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    name="plonetheme.jqueryui-select"
     class=".controlpanel.MainControlPanelView"
     permission="cmf.ManagePortal"
     />

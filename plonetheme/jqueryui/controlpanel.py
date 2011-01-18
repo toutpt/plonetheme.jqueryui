@@ -112,5 +112,5 @@ def getOrCreatePersistentResourceDirectory():
     persistentDirectory = component.getUtility(IResourceDirectory, name="persistent")
     if interfaces.THEME_RESOURCE_NAME not in persistentDirectory:
         persistentDirectory.makeDirectory(interfaces.THEME_RESOURCE_NAME)
-    
+
     return persistentDirectory[interfaces.THEME_RESOURCE_NAME]
