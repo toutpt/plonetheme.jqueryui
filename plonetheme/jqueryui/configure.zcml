@@ -11,7 +11,6 @@
   <include package="plone.autoform" />
   <include package="plone.resource" />
   <include package="plone.app.registry"/>
-  <include package="plone.app.theming"/>
   <include package="plone.transformchain"/>
   <include package="collective.z3cform.colorpicker"/>
   <five:registerPackage package="." initialize=".initialize" />
@@ -48,5 +47,8 @@
     />
 
   <subscriber handler=".css.handle_registry_modified" />
-
+  <utility
+    component=".theme.JQueryUIThemeVocabularyFactory"
+    name="plonetheme.jqueryui.vocabularies.themes"
+    />
 </configure>

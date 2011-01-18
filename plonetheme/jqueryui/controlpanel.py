@@ -39,6 +39,7 @@ CustomControlPanelView = layout.wrap_form(CustomControlPanelForm,
                                      ControlPanelFormWrapper)
 CustomControlPanelView.label = i18n.customcontrolpanel_label
 
+
 class ImportThemeForm(BrowserView):
 
     def __call__(self):
@@ -78,12 +79,10 @@ class ImportThemeForm(BrowserView):
                     logger.warn(str(e))
                     self.errors['themeArchive'] = u"error_jqueryui_file"
                 else:
-                    
                     themeContainer = getOrCreatePersistentResourceDirectory()
-                    themeExists = infos['name'] in themeContainer
-                    if themeExists:
-                        del themeContainer[infos['name']]
                 themeContainer.importZip(themeZip)
+                for i in ('index.html', 'development-bundle', 'js'):
+                    del themeContainer[i]
 
         return True
 
