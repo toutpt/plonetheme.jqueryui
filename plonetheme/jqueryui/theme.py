@@ -1,3 +1,6 @@
+import os
+import zipfile
+
 from urlparse import urlparse
 from urllib import urlencode, urlopen
 
@@ -9,51 +12,118 @@ from zope.schema.vocabulary import SimpleVocabulary
 from zope.site.hooks import getSite
 
 from plone.registry.interfaces import IRegistry
+from plone.resource.interfaces import IResourceDirectory
 
 from plonetheme.jqueryui import config
 from plonetheme.jqueryui import interfaces
-from plonetheme.jqueryui import controlpanel
+from plonetheme.jqueryui import logger
 
 BASE = "http://jqueryui.com/themeroller/?ctl=themeroller&"
 
-class JQueryUIThemeVocabulary(object):
-    """Vocabulary factory for jqueryui themes.
+class JQueryUIThemeVocabularyFactory(object):
+    """Vocabulary for jqueryui themes.
     """
     interface.implements(IVocabularyFactory)
 
     def __call__(self, context):
-        items = []
-        site = getSite()
-        themeContainer = controlpanel.getOrCreatePersistentResourceDirectory()
-        items = [str(themeid) for themeid in themeContainer['css'].listDirectory()]
-        items = [SimpleTerm(i, i, i) for i in items]
-        items.insert(0, SimpleTerm('collective.js.jqueryui', 'collective.js.jqueryui', 'collective.js.jqueryui'))
-        items.insert(0, SimpleTerm('sunburst', 'sunburst', 'sunburst'))
-        return SimpleVocabulary(items)
+        """Retrieve available themes inside persistent resource and add
+        sunburst and collective.js.jqueryui themes"""
 
-JQueryUIThemeVocabularyFactory = JQueryUIThemeVocabulary()
+#        items = getThemes()
+#        items = [(i, i) for i in items]
+        items = [('jqueryui', 'jqueryui'),
+                 ('sunburst', 'sunburst')]
+        return SimpleVocabulary.fromItems(items)
 
-class JQueryUITheme(object):
-    """Base object represent a jqueryui theme loaded from registry"""
-    interface.implements(interfaces.IJQueryUITheme)
-    def __init__(self):
-        self.registry = component.getUtility(IRegistry)
-        self.settings = self.registry.forInterface(interfaces.IJQueryUIThemeSettings)
+JQueryUIThemeVocabulary = JQueryUIThemeVocabularyFactory()
 
-    def getURL(self):
-        if self.settings.theme in config.PRELOADEDS:
-            return BASE+urlencode(self.asDict())
-        else:
-            #TODO
-            pass
+def importTheme(themeArchive):
+    """Import a zipfile as persistent resource"""
+    try:
+        themeZip = zipfile.ZipFile(themeArchive)
+    except (zipfile.BadZipfile, zipfile.LargeZipFile,):
+        logger.exception("Could not read zip file")
+        raise TypeError('error_invalid_zip')
 
-    def asDict(self):
-        #TODO
-        return {'a':'a'}
-    
-    def update(self, url):
-        if not url.startswith(BASE):
-            return
-        css = urlopen(url).read()
-        #TODO
+    for name in themeZip.namelist():
+        member = themeZip.getinfo(name)
+        path = member.filename.lstrip('/')
+        starter = path.split('/')[0]
+        if starter =='css' and 'name' not in infos:
+            infos['name'] = path.split('/')[1]
+        if starter == 'js' and 'version' not in infos:
+            basename = os.path.basename(path)
+            if basename.startswith('jquery-ui'):
+                infos['version'] = basename[len('jquery-ui-'):len('.custom.min.js')]
+        themeContainer = getThemeDirectory()
+    themeContainer.importZip(themeZip)
+    for i in ('index.html', 'development-bundle', 'js'):
+        del themeContainer[i]
+
+def getThemeDirectory():
+    """Obtain the 'jqueryuitheme' persistent resource directory,
+    creating it if necessary.
+    """
+    persistentDirectory = component.getUtility(IResourceDirectory, name="persistent")
+    if interfaces.THEME_RESOURCE_NAME not in persistentDirectory:
+        persistentDirectory.makeDirectory(interfaces.THEME_RESOURCE_NAME)
+
+    return persistentDirectory[interfaces.THEME_RESOURCE_NAME]
+
+def getThemes():
+    """Return the list of available themes"""
+    items = []
+    site = getSite()
+    themeContainer = getThemeDirectory()
+    themes = themeContainer['css'].listDirectory()
+    return map(str, themes)
+
+def unregisterTheme(themeid):
+    if themeid == 'sunburst':
+        return
+    elif themeid == 'collective.js.jqueryui':
+        return
+
+    #a theme in persistent directory
+    plone = component.getSiteManager()
+    csstool = plone.portal_css
+    BASE = 'portal_resources/%s/css/'%interfaces.THEME_RESOURCE_NAME
+    themeContainer = getThemeDirectory()
+    try:
+        ids = themeContainer['css'][themeid].listDirectory()
+        css_id = None
+        for id in ids:
+            if id.endswith('css'):
+                css_id = id
+        old_resource = BASE+themeid+'/'+css_id
+        csstool.unregisterResource(old_resource)
+    except NotFound, e:
+        logger.info('the new theme has not been found in resource directory')
+    except Exception, e:
+        logger.error(e)
+
+def registerTheme(themeid):
+    if themeid == 'sunburst':
+        return
+    elif themeid == 'collective.js.jqueryui':
+        return
+
+    #a theme in persistent directory
+    plone = component.getSiteManager()
+    csstool = plone.portal_css
+    BASE = 'portal_resources/%s/css/'%interfaces.THEME_RESOURCE_NAME
+    themeContainer = controlpanel.getOrCreatePersistentResourceDirectory()
+    try:
+        ids = themeContainer['css'][themeid].listDirectory()
+        css_id = None
+        for id in ids:
+            if id.endswith('css'):
+                css_id = id
+        resource = BASE+themeid+'/'+css_id
+        csstool.registerStylesheet(resource)
+        csstool.cookResources()
+    except NotFound, e:
+        logger.info('the new theme has not been found in resource directory')
+    except Exception, e:
+        logger.error(e)
 

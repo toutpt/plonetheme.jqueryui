@@ -5,6 +5,8 @@ from plone.transformchain.interfaces import ITransform
 from plonetheme.jqueryui.interfaces import IJQueryUIThemeLayer
 
 class JQueryUITransform(object):
+    """This should be a way to update the theme on server side without
+    having to override all templates"""
     implements(ITransform)
     adapts(Interface, IJQueryUIThemeLayer) # any context, any request
 

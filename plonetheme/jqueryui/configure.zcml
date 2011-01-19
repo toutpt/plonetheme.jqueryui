@@ -53,9 +53,9 @@
     permission="cmf.ManagePortal"
     />
 
-  <subscriber handler=".css.handle_registry_modified" />
+  <subscriber handler=".controlpanel.handleRegistryModified" />
   <utility
-    component=".theme.JQueryUIThemeVocabularyFactory"
+    component=".theme.JQueryUIThemeVocabulary"
     name="plonetheme.jqueryui.vocabularies.themes"
     />
 </configure>
