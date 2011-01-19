@@ -29,14 +29,12 @@ img { vertical-align: text-bottom; }
 /* @group Basics */
 
 body {
-    font: 100% Arial, FreeSans, sans-serif;
     background: White;
     color: Black;
     /* width: 58em; margin: 1em auto; */
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Helvetica Neue", Arial, FreeSans, sans-serif;
     font-weight: bold;
     color: Black;
     line-height: 1.5em;
@@ -82,7 +80,6 @@ dt {
     font-weight: bold;
 }
 input {
-    font-family: "Lucida Grande", Arial, FreeSans;
 }
 
 q {
@@ -611,7 +608,6 @@ dl.portlet li {
 #content #description {
     color: #666;
     margin-left: 0;
-    font: bold 1.25em "Helvetica Neue", Arial, FreeSans, sans-serif;
 }
 
 #content img.tileImage,

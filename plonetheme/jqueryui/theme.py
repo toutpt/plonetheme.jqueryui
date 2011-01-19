@@ -79,14 +79,17 @@ def getThemes():
     return map(str, themes)
 
 def unregisterTheme(themeid):
+    plone = component.getSiteManager()
+    csstool = plone.portal_css
+
     if themeid == 'sunburst':
         return
     elif themeid == 'collective.js.jqueryui':
+        css.registerResource('++resource++jquery.ui.all.css')
+        csstool.cookResources()
         return
 
     #a theme in persistent directory
-    plone = component.getSiteManager()
-    csstool = plone.portal_css
     BASE = 'portal_resources/%s/css/'%interfaces.THEME_RESOURCE_NAME
     themeContainer = getThemeDirectory()
     try:
@@ -106,13 +109,15 @@ def registerTheme(themeid):
     if themeid == 'sunburst':
         return
     elif themeid == 'collective.js.jqueryui':
+        css.unregisterResource('++resource++jquery.ui.all.css')
+        csstool.cookResources()
         return
 
     #a theme in persistent directory
     plone = component.getSiteManager()
     csstool = plone.portal_css
     BASE = 'portal_resources/%s/css/'%interfaces.THEME_RESOURCE_NAME
-    themeContainer = controlpanel.getOrCreatePersistentResourceDirectory()
+    themeContainer = getThemeDirectory()
     try:
         ids = themeContainer['css'][themeid].listDirectory()
         css_id = None

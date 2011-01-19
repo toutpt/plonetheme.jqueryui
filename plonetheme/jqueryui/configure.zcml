@@ -15,6 +15,7 @@
   <include package="collective.z3cform.colorpicker"/>
   <five:registerPackage package="." initialize=".initialize" />
   <cmf:registerDirectory name="plonetheme_jqueryui" />
+  <include package=".browser" />
 
 <!--  <adapter factory=".transform.JQueryUITransform" name="plonetheme.jqueryui.transform" />
 -->
