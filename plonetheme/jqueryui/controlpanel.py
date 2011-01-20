@@ -31,6 +31,11 @@ MainControlPanelView.label = i18n.maincontrolpanel_label
 
 class CustomControlPanelForm(RegistryEditForm):
     schema = interfaces.IJQueryUITheme
+    
+    def applyChanges(self, data):
+        super(CustomControlPanelForm).applyChanges(data)
+        theme.download_theme(data)
+
 
 CustomControlPanelView = layout.wrap_form(CustomControlPanelForm,
                                      ControlPanelFormWrapper)

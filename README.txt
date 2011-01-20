@@ -19,3 +19,4 @@ Features
 
 * manage jqueryui themes
 * activate plonetheme
+

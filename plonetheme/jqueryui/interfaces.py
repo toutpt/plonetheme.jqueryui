@@ -58,122 +58,122 @@ class IJQueryUITheme(interface.Interface):
     bgTextureHeader = schema.ASCIILine(title=i18n.bgTextureHeader,
                                  default='01_flat.png')
     borderColorHeader = schema.ASCIILine(title=i18n.borderColorHeader,
-                                 default='cccccc')
+                                 default='#cccccc')
     iconColorHeader = schema.ASCIILine(title=i18n.iconColorHeader,
-                                 default='205c90')
+                                 default='#205c90')
     fcHeader = schema.ASCIILine(title=i18n.fcHeader,
-                                 default='444444')
+                                 default='#444444')
     
     #content
     bgColorContent = schema.ASCIILine(title=i18n.bgColorContent,
-                                 default='ffffff')
+                                 default='#ffffff')
     bgImgOpacityContent = schema.ASCIILine(title=i18n.bgImgOpacityContent,
                                  default='100')
     bgTextureContent = schema.ASCIILine(title=i18n.bgTextureContent,
                                  default='01_flat.png')
     borderColorContent = schema.ASCIILine(title=i18n.borderColorContent,
-                                 default='cccccc')
+                                 default='#cccccc')
     iconColorContent = schema.ASCIILine(title=i18n.iconColorContent,
-                                 default='205c90')
+                                 default='#205c90')
     fcContent = schema.ASCIILine(title=i18n.fcContent,
-                                 default='444444')
+                                 default='#444444')
     
     #clickable default state
     bgColorDefault = schema.ASCIILine(title=i18n.bgColorDefault,
-                                 default='')
+                                 default='#205c90')
     bgImgOpacityDefault = schema.ASCIILine(title=i18n.bgImgOpacityDefault,
-                                 default='')
+                                 default='45')
     bgTextureDefault = schema.ASCIILine(title=i18n.bgTextureDefault,
                                  default='')
     borderColorDefault = schema.ASCIILine(title=i18n.borderColorDefault,
-                                 default='')
+                                 default='#cccccc')
     iconColorDefault = schema.ASCIILine(title=i18n.iconColorDefault,
-                                 default='')
+                                 default='#ffffff')
     fcDefault = schema.ASCIILine(title=i18n.fcDefault,
-                                 default='')
+                                 default='#ffffff')
 
     #clickable hover state
     bgColorHover = schema.ASCIILine(title=i18n.bgColorHover,
-                                 default='')
+                                 default='#dddddd')
     bgImgOpacityHover = schema.ASCIILine(title=i18n.bgImgOpacityHover,
-                                 default='')
+                                 default='75')
     bgTextureHover = schema.ASCIILine(title=i18n.bgTextureHover,
                                  default='normal')
     borderColorHover = schema.ASCIILine(title=i18n.borderColorHover,
-                                 default='')
+                                 default='#448dae')
     iconColorHover = schema.ASCIILine(title=i18n.iconColorHover,
-                                 default='')
+                                 default='#444444')
     fcHover = schema.ASCIILine(title=i18n.fcHover,
-                                 default='')
+                                 default='#444444')
     
     #clickable active state
-    fcActive = schema.ASCIILine(title=i18n.fcActive,
-                                 default='')
-    iconColorActive = schema.ASCIILine(title=i18n.iconColorActive,
-                                 default='')
-    borderColorActive = schema.ASCIILine(title=i18n.borderColorActive,
-                                 default='')
     bgColorActive = schema.ASCIILine(title=i18n.bgColorActive,
-                                 default='')
+                                 default='#75ad0a')
+    bgImgOpacityActive = schema.ASCIILine(title=i18n.bgImgOpacityActive,
+                                 default='50')
     bgTextureActive = schema.ASCIILine(title=i18n.bgTextureActive,
                                  default='')
-    bgImgOpacityActive = schema.ASCIILine(title=i18n.bgImgOpacityActive,
-                                 default='')
+    borderColorActive = schema.ASCIILine(title=i18n.borderColorActive,
+                                 default='#cccccc')
+    iconColorActive = schema.ASCIILine(title=i18n.iconColorActive,
+                                 default='#ffffff')
+    fcActive = schema.ASCIILine(title=i18n.fcActive,
+                                 default='#ffffff')
 
     #highlight
-    fcHighlight = schema.ASCIILine(title=i18n.fcHighlight,
-                                 default='')
-    borderColorHighlight = schema.ASCIILine(title=i18n.borderColorHighlight,
-                                 default='')
-    bgImgOpacityHighlight = schema.ASCIILine(title=i18n.bgImgOpacityHighlight,
-                                 default='')
-    iconColorHighlight = schema.ASCIILine(title=i18n.iconColorHighlight,
-                                 default='')
     bgColorHighlight = schema.ASCIILine(title=i18n.bgColorHighlight,
-                                 default='')
+                                 default='#ffdd77')
+    bgImgOpacityHighlight = schema.ASCIILine(title=i18n.bgImgOpacityHighlight,
+                                 default='55')
     bgTextureHighlight = schema.ASCIILine(title=i18n.bgTextureHighlight,
                                  default='')
+    borderColorHighlight = schema.ASCIILine(title=i18n.borderColorHighlight,
+                                 default='#dd8800')
+    iconColorHighlight = schema.ASCIILine(title=i18n.iconColorHighlight,
+                                 default='#000000')
+    fcHighlight = schema.ASCIILine(title=i18n.fcHighlight,
+                                 default='#dd8800')
 
     #error
     bgColorError = schema.ASCIILine(title=i18n.bgColorError,
-                                 default='')
+                                 default='#ffddcc')
     bgImgOpacityError = schema.ASCIILine(title=i18n.bgImgOpacityError,
-                                 default='')
-    fcError = schema.ASCIILine(title=i18n.fcError,
-                                 default='')
+                                 default='45')
     bgTextureError = schema.ASCIILine(title=i18n.bgTextureError,
                                  default='')
     borderColorError = schema.ASCIILine(title=i18n.borderColorError,
-                                 default='')
+                                 default='#dd0000')
     iconColorError = schema.ASCIILine(title=i18n.iconColorError,
-                                 default='')
+                                 default='#000000')
+    fcError = schema.ASCIILine(title=i18n.fcError,
+                                 default='#dd0000')
 
     #modal screen for overlay
+    bgColorOverlay = schema.ASCIILine(title=i18n.bgColorOverlay,
+                                 default='#aaaaaa')
+    bgImgOpacityOverlay = schema.ASCIILine(title=i18n.bgImgOpacityOverlay,
+                                 default='75')
     bgTextureOverlay = schema.ASCIILine(title=i18n.bgTextureOverlay,
                                  default='')
-    bgImgOpacityOverlay = schema.ASCIILine(title=i18n.bgImgOpacityOverlay,
-                                 default='')
-    bgColorOverlay = schema.ASCIILine(title=i18n.bgColorOverlay,
-                                 default='')
     opacityOverlay = schema.ASCIILine(title=i18n.opacityOverlay,
-                                 default='')
+                                 default='30')
 
-    #drop shadows
+    #drop shadows#999999
+    bgColorShadow = schema.ASCIILine(title=i18n.bgColorShadow,
+                                 default='#999999')
+    bgImgOpacityShadow = schema.ASCIILine(title=i18n.bgImgOpacityShadow,
+                                 default='55')
     bgTextureShadow = schema.ASCIILine(title=i18n.bgTextureShadow,
                                  default='')
-    thicknessShadow = schema.ASCIILine(title=i18n.thicknessShadow,
-                                 default='')
-    opacityShadow = schema.ASCIILine(title=i18n.opacityShadow,
-                                 default='')
-    bgColorShadow = schema.ASCIILine(title=i18n.bgColorShadow,
-                                 default='')
-    offsetLeftShadow = schema.ASCIILine(title=i18n.offsetLeftShadow,
-                                 default='')
-    bgImgOpacityShadow = schema.ASCIILine(title=i18n.bgImgOpacityShadow,
-                                 default='')
-    offsetTopShadow = schema.ASCIILine(title=i18n.offsetTopShadow,
-                                 default='')
     cornerRadiusShadow = schema.ASCIILine(title=i18n.cornerRadiusShadow,
+                                 default='5px')
+    thicknessShadow = schema.ASCIILine(title=i18n.thicknessShadow,
+                                 default='0px')
+    opacityShadow = schema.ASCIILine(title=i18n.opacityShadow,
+                                 default='45')
+    offsetLeftShadow = schema.ASCIILine(title=i18n.offsetLeftShadow,
+                                 default='5px')
+    offsetTopShadow = schema.ASCIILine(title=i18n.offsetTopShadow,
                                  default='5px')
 
 from plone.autoform.interfaces import WIDGETS_KEY

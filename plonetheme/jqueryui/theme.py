@@ -17,6 +17,7 @@ from plone.resource.interfaces import IResourceDirectory
 from plonetheme.jqueryui import config
 from plonetheme.jqueryui import interfaces
 from plonetheme.jqueryui import logger
+from zExceptions import NotFound
 
 BASE = "http://jqueryui.com/themeroller/?ctl=themeroller&"
 
@@ -45,6 +46,7 @@ def importTheme(themeArchive):
         logger.exception("Could not read zip file")
         raise TypeError('error_invalid_zip')
 
+    infos = {}
     for name in themeZip.namelist():
         member = themeZip.getinfo(name)
         path = member.filename.lstrip('/')
@@ -132,3 +134,22 @@ def registerTheme(themeid):
     except Exception, e:
         logger.error(e)
 
+def download_theme(data):
+    """Download the themezip directly from jqueryui.com
+    
+    * theme: params from theme app
+    * jqueryui: {'version':'1.8.8', version of jqueryui
+    * theme_fol"""
+    BASE = "http://jqueryui.com/download/?download=true&"
+    import pdb;pdb.set_trace()
+    pass
+
+#files[]
+#theme
+#  queryparam of themeroller
+#
+#t-name (theme folder name)
+#
+#scope (css scope)
+#
+#ui-version (1.8.8)

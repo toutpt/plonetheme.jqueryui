@@ -1,4 +1,4 @@
 <registry>
-  <records interface="plonetheme.jqueryui.interfaces.IJQueryUIThemeSettings" />
+  <records interface="plonetheme.jqueryui.interfaces.IJQueryUIThemeSettings" purge="true" />
   <records interface="plonetheme.jqueryui.interfaces.IJQueryUITheme" />
 </registry>
