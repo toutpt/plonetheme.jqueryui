@@ -120,14 +120,15 @@ var removeRules = function() {
 };
 
 var enableFonts = function() {
-    jq('body').addClass('ui-widget');
+/*    jq('body').addClass('ui-widget');
     removeRule('h1, h2, h3, h4, h5, h6', 'font-family', 'fontFamily');
     removeRule('#content .documentDescription, #content #description', 'font', 'font'); // needed for chrome
     removeRule('#content .documentDescription, #content #description', 'font-family', 'fontFamily');
+*/
 }
 
 var enablePersonalTool = function() {
-    removeRule('#portal-personaltools', 'background-color', 'backgroundColor');
+/*    removeRule('#portal-personaltools', 'background-color', 'backgroundColor');
     removeRule('#portal-personaltools', 'background-position', 'backgroundPosition');
     removeRule('#portal-personaltools', 'background-repeat', 'backgroundRepeat');
     removeRule('#portal-personaltools', 'background-image', 'backgroundImage');
@@ -140,7 +141,7 @@ var enablePersonalTool = function() {
     }, function() {
         jq(this).removeClass('ui-state-hover');
     });
-
+*/
     removeRule('#portal-personaltools dd', 'background-color', 'backgroundColor');
     removeRule('#portal-personaltools dd', 'background-position', 'backgroundPosition');
     removeRule('#portal-personaltools dd', 'background-repeat', 'backgroundRepeat');
@@ -505,3 +506,16 @@ var enableEditBar2 = function() {
     jq('dd.actionMenuContent li a').css('padding-left', '3px').css('padding-right', '3px');
     }
 }
+jq(document).ready(function() {
+    jq('#portal-personaltools').hover(function() {
+        jq(this).addClass('ui-state-hover');
+    }, function() {
+        jq(this).removeClass('ui-state-hover');
+    });
+    jq('#portal-personaltools dd a').hover(function() {
+        jq(this).addClass('ui-state-hover');
+    }, function() {
+        jq(this).removeClass('ui-state-hover');
+    });
+
+});

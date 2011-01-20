@@ -1,0 +1,26 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="plonetheme.jqueryui">
+
+<!-- add ui-widget class on body -->
+
+    <browser:page
+        name="plone_layout"
+        for="*"
+        permission="zope.Public"
+        class=".layout.LayoutPolicy"
+        allowed_interface="plone.app.layout.globals.interfaces.ILayoutPolicy"
+        layer="plonetheme.jqueryui.interfaces.IJQueryUIThemeLayer"
+        />
+
+<!-- add class on personal_bar -->
+    <browser:viewlet
+        name="plone.personal_bar"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class=".viewlet.PersonalBarViewlet"
+        permission="zope2.View"
+        layer="plonetheme.jqueryui.interfaces.IJQueryUIThemeLayer"
+        />
+
+</configure>
