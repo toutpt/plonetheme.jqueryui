@@ -14,11 +14,20 @@
         layer="plonetheme.jqueryui.interfaces.IJQueryUIThemeLayer"
         />
 
-<!-- add class on personal_bar -->
+    <!-- add ui class on personal_bar -->
     <browser:viewlet
         name="plone.personal_bar"
         manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-        class=".viewlet.PersonalBarViewlet"
+        class=".viewlets.PersonalBarViewlet"
+        permission="zope2.View"
+        layer="plonetheme.jqueryui.interfaces.IJQueryUIThemeLayer"
+        />
+
+    <!-- add ui class on global sections -->
+    <browser:viewlet
+        name="plone.global_sections"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class=".viewlets.GlobalSectionsViewlet"
         permission="zope2.View"
         layer="plonetheme.jqueryui.interfaces.IJQueryUIThemeLayer"
         />

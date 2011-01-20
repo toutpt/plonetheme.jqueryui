@@ -101,16 +101,15 @@ ortal-header {
 #portal-globalnav {
     clear: both;
     font-size: 80%;
-    background: #ddd;
     /* ensure top navigation dont touches portlets, content etc.. #10491 */
     margin: 0 0 1em 0;
 }
 #portal-globalnav li {
+  margin-right:0px;
 }
 #portal-globalnav li a {
     display: inline-block;
     padding: 0.5em 1em 2em 1em;
-    background: #ddd;
     min-width: 6em;
     white-space: normal;
     /*TODO: Once we have removed the whitespace from the nav template, this can be put back*/
@@ -120,12 +119,8 @@ ortal-header {
 
 #portal-globalnav .selected a,
 #portal-globalnav a:hover {
-    background: #205c90;
-    color: White;
 }
 #portal-globalnav .selected a:hover {
-    background: #ddd;
-    color: #205c90;
 }
 
 #portal-personaltools {

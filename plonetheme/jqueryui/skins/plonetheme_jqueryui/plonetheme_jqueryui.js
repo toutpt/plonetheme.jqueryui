@@ -141,7 +141,7 @@ var enablePersonalTool = function() {
     }, function() {
         jq(this).removeClass('ui-state-hover');
     });
-*/
+
     removeRule('#portal-personaltools dd', 'background-color', 'backgroundColor');
     removeRule('#portal-personaltools dd', 'background-position', 'backgroundPosition');
     removeRule('#portal-personaltools dd', 'background-repeat', 'backgroundRepeat');
@@ -152,12 +152,13 @@ var enablePersonalTool = function() {
     removeRule('#portal-personaltools dd a:hover', 'background-image', 'backgroundImage');
     removeRule('#portal-personaltools dd a:hover', 'color', 'color');
     jq('#portal-personaltools dd').addClass('ui-helper-reset ui-state-default ui-corner-all').css('top', '22px');
-
     jq('#portal-personaltools dd a').hover(function() {
         jq(this).addClass('ui-state-hover');
     }, function() {
         jq(this).removeClass('ui-state-hover');
     });
+*/
+
 };
 
 var enableStatusMessage = function() {
@@ -347,6 +348,7 @@ var enableTabs = function() {
 };
 
 var enableGlobalTabs = function() {
+  /*
     removeRule('#portal-globalnav', 'background-color', 'backgroundColor');
     removeRule('#portal-globalnav', 'background-position', 'backgroundPosition');
     removeRule('#portal-globalnav', 'background-repeat', 'backgroundRepeat');
@@ -375,19 +377,22 @@ var enableGlobalTabs = function() {
 
     removeRule('#portal-globalnav .selected a, #portal-globalnav a:hover', 'color', 'color');
 
-    jq('<div id="ui-globalnav" class="ui-bottonset"></div>').insertBefore('#portal-globalnav');
+/*    jq('<div id="ui-globalnav" class="ui-bottonset"></div>').insertBefore('#portal-globalnav');
     jq('#portal-globalnav').appendTo('#ui-globalnav');
 
     jq('#portal-globalnav').addClass('ui-state-default ui-corner-all');
+
     jq('#portal-globalnav li').addClass('ui-button ui-widget ui-state-default ui-botton-text-only').css('border', '0px solid black').hover(function() {
         jq(this).addClass('ui-state-hover');
     }, function() {
         jq(this).removeClass('ui-state-hover');
     });
-    jq('#portal-globalnav li:first').addClass('ui-corner-left');
     jq('#portal-globalnav li a').addClass('ui-button-text');
     jq('#portal-globalnav').find('.selected').addClass('ui-state-active');
     jq('#portal-globalnav li.ui-button').css('margin-right', '0px');
+    */
+    jq('#portal-globalnav li:first').addClass('ui-corner-left');
+    
 };
 
 var enablePortlets = function() {
@@ -517,5 +522,9 @@ jq(document).ready(function() {
     }, function() {
         jq(this).removeClass('ui-state-hover');
     });
-
+    jq('#portal-globalnav li').addClass('ui-button ui-widget ui-state-default ui-botton-text-only').css('border', '0px solid black').hover(function() {
+        jq(this).addClass('ui-state-hover');
+    }, function() {
+        jq(this).removeClass('ui-state-hover');
+    });
 });

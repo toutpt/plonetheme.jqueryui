@@ -1,0 +1,18 @@
+<tal:sections tal:define="portal_tabs view/portal_tabs"
+     tal:condition="portal_tabs"
+     i18n:domain="plone">
+    <h5 class="hiddenStructure" i18n:translate="heading_sections">Sections</h5>
+    <div id="ui-globalnav" class="ui-bottonset"
+    ><ul id="portal-globalnav" class="ui-state-default ui-corner-all"
+        tal:define="selected_tab python:view.selected_portal_tab"
+        ><tal:tabs tal:repeat="tab portal_tabs"
+        ><li tal:define="tid tab/id; selected python:selected_tab==tid and 'selected ui-state-active' or 'plain'"
+             tal:attributes="id string:portaltab-${tid};
+                             class string:$selected ui-button ui-widget ui-state-default ui-botton-text-only;"
+            ><a href="" class="ui-button-text"
+               tal:content="tab/name"
+               tal:attributes="href tab/url;
+                               title tab/description|nothing;">
+            Tab Name
+            </a></li></tal:tabs></ul></div>
+</tal:sections>
