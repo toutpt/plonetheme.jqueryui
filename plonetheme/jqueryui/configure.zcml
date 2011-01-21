@@ -17,9 +17,6 @@
   <cmf:registerDirectory name="plonetheme_jqueryui" />
   <include package=".browser" />
 
-<!--  <adapter factory=".transform.JQueryUITransform" name="plonetheme.jqueryui.transform" />
--->
-
   <genericsetup:registerProfile
       name="default"
       title="plonetheme.jqueryui"
