@@ -173,7 +173,7 @@ var enableStatusMessage = function() {
              } else {
                  var template = '<div class="ui-custom-status-container ui-state-highlight ui-corner-all"><p><span style="float: left; margin-right: 0.3em;" class="ui-icon ui-icon-info"></span><strong>'+label+'</strong>\n'+content+'</p></div>';
              }
-             jq('#viewlet-above-content').after(template);
+             jq(this).after(template);
              }
          });
 };
@@ -540,6 +540,6 @@ jq(document).ready(function() {
     }, function() {
         jq(this).removeClass('ui-state-hover');
     });
-
+    enableStatusMessage();
 
 });
