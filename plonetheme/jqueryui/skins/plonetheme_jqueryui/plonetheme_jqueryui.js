@@ -535,6 +535,11 @@ jq(document).ready(function() {
     }, function() {
         jq(this).removeClass('ui-state-hover');
     });
+    jq('.actionMenuContent li a').hover(function() {
+        jq(this).addClass('ui-state-hover');
+    }, function() {
+        jq(this).removeClass('ui-state-hover');
+    });
 
 
 });

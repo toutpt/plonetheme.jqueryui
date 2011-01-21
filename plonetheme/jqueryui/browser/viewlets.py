@@ -12,3 +12,6 @@ class FooterViewlet(common.FooterViewlet):
 
 class ContentViewsViewlet(common.ContentViewsViewlet):
     index = ViewPageTemplateFile('contentviews.pt')
+
+class ContentActionsViewlet(common.ContentActionsViewlet):
+    index = ViewPageTemplateFile('contentactions.pt')
