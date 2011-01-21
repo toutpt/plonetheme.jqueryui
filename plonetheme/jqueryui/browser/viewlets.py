@@ -6,3 +6,6 @@ class PersonalBarViewlet(common.PersonalBarViewlet):
 
 class GlobalSectionsViewlet(common.GlobalSectionsViewlet):
     index = ViewPageTemplateFile('sections.pt')
+
+class FooterViewlet(common.FooterViewlet):
+    index = ViewPageTemplateFile('footer.pt')

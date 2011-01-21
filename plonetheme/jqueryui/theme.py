@@ -166,3 +166,4 @@ def download_theme(data):
 
     sio = StringIO.StringIO(download.read())
     importTheme(sio)
+    registerTheme(data['name'])
