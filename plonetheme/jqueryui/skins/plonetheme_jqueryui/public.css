@@ -112,9 +112,6 @@ ortal-header {
     padding: 0.5em 1em 2em 1em;
     min-width: 6em;
     white-space: normal;
-    /*TODO: Once we have removed the whitespace from the nav template, this can be put back*/
-    /*border-bottom: 0.1em solid White;*/
-    border-right: 0.1em solid white;
 }
 
 #portal-globalnav .selected a,
@@ -927,12 +924,6 @@ dl.actionMenu.activated dd {
     position: absolute;
     width: auto;
     min-width: 100%;
-    border-bottom-right-radius: 0.5em;
-    border-bottom-left-radius: 0.5em;
-    -webkit-border-bottom-right-radius: 0.5em;
-    -webkit-border-bottom-left-radius: 0.5em;
-    -moz-border-radius-bottomleft: 0.5em;
-    -moz-border-radius-bottomright: 0.5em;
 }
 dl.actionMenu.activated dt a,
 dl.actionMenu.activated dd a,

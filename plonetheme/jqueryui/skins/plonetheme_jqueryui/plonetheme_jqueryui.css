@@ -1,53 +1,6 @@
-/**copy pasted from zettwerk.ui**/
-/*FORMS*/
-#searchGadget {
-    font-size: 1em;
-}
-input.searchButton {
-    font-size: 1em;
-}
-input[type=text].ui-button,
-select.ui-button,
-textarea.ui-button {
-    text-align: left;
-}
-input[type=text] {
-    cursor: text;
-}
-#LSResult fieldset {
-    border-width: 0px;
-}
 
-/* STATUS MESSAGE */
-.ui-custom-status-container {
-    margin-top: 5px;
-    margin-bottom: 10px;
-    padding: 0pt 0.7em;
+.ui-state-active,
+.ui-state-hover,
+.ui-state-default{
+    border:0px solid black;
 }
-.ui-custom-status-container p {
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-.ui-custom-status-container p a {
-    font-weight: bold;
-    text-decoration: underline;
-}
-.ui-dialog .ui-button {
-    font-size: .8em;
-}
-
-/* TABS */
-.ui-tabs-nav {
-    margin-left: 0px !important;
-}
-
-/* FOOTER */
-#portal-footer a {
-    text-decoration: underline;
-}
-
-/* PERSONAL_TOOL */
-.actionMenu .ui-state-hover {
-    border: 0px;
-}
-

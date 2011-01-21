@@ -9,8 +9,8 @@
             tal:condition="content_actions | wf_state"
             i18n:translate="heading_actions">Actions</h5>
 
-        <ul tal:condition="content_actions" class="actionItems  ui-state-default ui-button-set ui-corner-all">
-            <li class=" ui-corner-all" tal:repeat="action content_actions"
+        <ul tal:condition="content_actions" class="actionItems ui-state-default ui-button-set ui-corner-all">
+            <li class="ui-state-default ui-corner-all" tal:repeat="action content_actions"
                 tal:attributes="id string:contentaction-${action/id};">
 
                 <a class="" href=""
