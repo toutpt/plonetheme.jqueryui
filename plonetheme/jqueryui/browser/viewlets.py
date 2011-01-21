@@ -9,3 +9,6 @@ class GlobalSectionsViewlet(common.GlobalSectionsViewlet):
 
 class FooterViewlet(common.FooterViewlet):
     index = ViewPageTemplateFile('footer.pt')
+
+class ContentViewsViewlet(common.ContentViewsViewlet):
+    index = ViewPageTemplateFile('contentviews.pt')

@@ -186,7 +186,7 @@ var enableForms = function($content) {
 
     $content.find('.optionsToggle').removeClass('optionsToggle');
     $content.find('input,select,textarea').addClass('ui-widget-content ui-corner-all ui-button-text hover');
-    $content.find('input,select,textarea').wrap('<span class="ui-button-text-only"></span>').css({'padding-left': '4px', 'padding-right': '4px'});
+//    $content.find('input,select,textarea').wrap('<span class="ui-button-text-only"></span>').css({'padding-left': '4px', 'padding-right': '4px'});
     
     $content.find('select, textarea, input:text, input:password').bind({
     focusin: function() {
@@ -423,12 +423,13 @@ var enablePortlets = function() {
 };
 
 var enableFooter = function() {
-    removeRule('#portal-footer', 'background-color', 'backgroundColor');
+/*    removeRule('#portal-footer', 'background-color', 'backgroundColor');
     removeRule('#portal-footer', 'background-position', 'backgroundPosition');
     removeRule('#portal-footer', 'background-repeat', 'backgroundRepeat');
     removeRule('#portal-footer', 'background-image', 'backgroundImage');
 
     jq('#portal-footer').addClass('ui-state-active ui-corner-all');
+*/
 };
 
 var edit_bar_interval = null;
@@ -527,4 +528,13 @@ jq(document).ready(function() {
     }, function() {
         jq(this).removeClass('ui-state-hover');
     });
+//    enableForms();
+
+    jq('#content-views li a').hover(function() {
+        jq(this).addClass('ui-state-hover');
+    }, function() {
+        jq(this).removeClass('ui-state-hover');
+    });
+
+
 });

@@ -42,4 +42,13 @@
         layer="plonetheme.jqueryui.interfaces.IJQueryUIThemeLayer"
         />
 
+    <!-- add ui class on Content views (tabs) -->
+    <browser:viewlet
+        name="plone.contentviews"
+        manager="plone.app.layout.viewlets.interfaces.IContentViews"
+        class=".viewlets.ContentViewsViewlet"
+        permission="zope2.View"
+        layer="plonetheme.jqueryui.interfaces.IJQueryUIThemeLayer"
+        />
+
 </configure>

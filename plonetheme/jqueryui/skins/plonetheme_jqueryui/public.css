@@ -833,8 +833,6 @@ dl.error dd {
     border: 0.3em solid #ddd;
 }
 #edit-bar {
-    background-color: #75ad0a;
-    border: 0.25em solid #75ad0a;
     font-size: 80%;
     min-height: 2em;
     margin-bottom: 1em;
@@ -842,24 +840,15 @@ dl.error dd {
 }
 #content-views {
     float: left;
-    background-color: #75ad0a;
 }
 #content-views a {
-    color: White;
 }
 
 /* Shared CSS between the two tab types */
 #edit-bar,
 #content ul.formTabs {
     display: block;
-    border-style: solid solid none solid;
     margin-left: 0;
-    border-top-right-radius: 0.5em;
-    border-top-left-radius: 0.5em;
-    -webkit-border-top-right-radius: 0.5em;
-    -webkit-border-top-left-radius: 0.5em;
-    -moz-border-radius-topleft: 0.5em;
-    -moz-border-radius-topright: 0.5em;
 }
 #content li.formTab {
     display: inline;
@@ -886,19 +875,11 @@ dl.error dd {
 #content-views li a:hover,
 #content li.formTab a.selected,
 #content li.formTab a:hover {
-    background: White;
-    color: Black;
 }
 #content-views li.selected a,
 #content-views li a:hover,
 #content li.formTab a.selected,
 #content li.formTab a:hover {
-    border-top-right-radius: 0.5em;
-    border-top-left-radius: 0.5em;
-    -webkit-border-top-right-radius: 0.5em;
-    -webkit-border-top-left-radius: 0.5em;
-    -moz-border-radius-topleft: 0.5em;
-    -moz-border-radius-topright: 0.5em;
 }
 #content li.formTab a.notify {
     background-color: red;
