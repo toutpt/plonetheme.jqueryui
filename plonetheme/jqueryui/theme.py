@@ -1,8 +1,10 @@
 import os
 import zipfile
+import StringIO
 
 from urlparse import urlparse
-from urllib import urlencode, urlopen
+from urllib import urlencode
+from urllib2 import urlopen
 
 from zope import component
 from zope import interface
@@ -140,16 +142,27 @@ def download_theme(data):
     * theme: params from theme app
     * jqueryui: {'version':'1.8.8', version of jqueryui
     * theme_fol"""
-    BASE = "http://jqueryui.com/download/?download=true&"
-    import pdb;pdb.set_trace()
-    pass
+    BASE = "http://jqueryui.com/download/?download=true"
+    query = ''
+    for file in config.FILES:
+        query += '&files[]='+file
+    query+= '&t-name='+data['name']
+    query+= '&scope='
+    query+='&ui-version='+data['version']
+    datac = data.copy()
+    del datac['name']
+    del datac['version']
+    theme = urlencode(datac)
+    query+='&theme=?'+theme
+    url = BASE+query
+    logger.info(url)
+    download = urlopen(url)
+    code = download.getcode()
 
-#files[]
-#theme
-#  queryparam of themeroller
-#
-#t-name (theme folder name)
-#
-#scope (css scope)
-#
-#ui-version (1.8.8)
+    if code != 200:
+        raise Exception, 'Cant download the theme got %s code'%code
+    if download.info().type != 'application/zip':
+        raise Exception, 'Is not a zip file'
+
+    sio = StringIO.StringIO(download.read())
+    importTheme(sio)

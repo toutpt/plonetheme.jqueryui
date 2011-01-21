@@ -33,7 +33,7 @@ class CustomControlPanelForm(RegistryEditForm):
     schema = interfaces.IJQueryUITheme
     
     def applyChanges(self, data):
-        super(CustomControlPanelForm).applyChanges(data)
+        super(CustomControlPanelForm, self).applyChanges(data)
         theme.download_theme(data)
 
 

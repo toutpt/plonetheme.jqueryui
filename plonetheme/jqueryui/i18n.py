@@ -13,6 +13,8 @@ label_theme = _(u"label_theme", default=u"Theme")
 maincontrolpanel_label = _(u"JQuery UI theme settings")
 customcontrolpanel_label = _(u"JQuery UI custom theme settings")
 
+themename           = _(u"themename", default=u"Theme name (ascii)")
+
 fwDefault           = _(u"fwDefault", default=u"Familly")
 ffDefault           = _(u"ffDefault", default=u"Weight")
 fsDefault           = _(u"fsDefault", default=u"Size")
