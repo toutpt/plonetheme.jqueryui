@@ -71,34 +71,35 @@ var enablePortlets = function() {
 
 var enableStateHover = function(){
     jq('#portal-personaltools').hover(function() {
-        jq(this).removeClass('ui-state-default').addClass('ui-state-hover');
+        jq(this).addClass('ui-state-hover');
     }, function() {
-        jq(this).removeClass('ui-state-hover').addClass('ui-state-default');
+        jq(this).removeClass('ui-state-hover');
     });
     jq('#portal-personaltools dd a').hover(function() {
-        jq(this).removeClass('ui-state-default').addClass('ui-state-hover');
+        jq(this).addClass('ui-state-hover');
     }, function() {
-        jq(this).removeClass('ui-state-hover').addClass('ui-state-default');
+        jq(this).removeClass('ui-state-hover');
     });
+
     jq('#portal-globalnav li').hover(function() {
-        jq(this).removeClass('ui-state-default').addClass('ui-state-hover');
+        jq(this).addClass('ui-state-hover');
     }, function() {
-        jq(this).removeClass('ui-state-hover').addClass('ui-state-default');
+        jq(this).removeClass('ui-state-hover');
     });
     jq('#content-views li').hover(function() {
-        jq(this).removeClass('ui-state-default').addClass('ui-state-hover');
+        jq(this).addClass('ui-state-hover');
     }, function() {
-        jq(this).removeClass('ui-state-hover').addClass('ui-state-default');
+        jq(this).removeClass('ui-state-hover');
     });
     jq('.actionMenuContent li').hover(function() {
-        jq(this).removeClass('ui-state-default').addClass('ui-state-hover');
+        jq(this).addClass('ui-state-hover');
     }, function() {
-        jq(this).removeClass('ui-state-hover').addClass('ui-state-default');
+        jq(this).removeClass('ui-state-hover');
     });
     jq('.contentActionMenus li').hover(function() {
-        jq(this).removeClass('ui-state-default').addClass('ui-state-hover');
+        jq(this).addClass('ui-state-hover');
     }, function() {
-        jq(this).removeClass('ui-state-hover').addClass('ui-state-default');
+        jq(this).removeClass('ui-state-hover');
     });
 
 }
@@ -106,6 +107,4 @@ var enableStateHover = function(){
 jq(document).ready(function() {
     enableStateHover();
     enableStatusMessage();
-    enableForms();
-
 });

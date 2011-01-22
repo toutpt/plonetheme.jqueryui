@@ -89,7 +89,7 @@ def unregisterTheme(themeid):
     if themeid == 'sunburst':
         return
     elif themeid == 'collective.js.jqueryui':
-        css.registerResource('++resource++jquery.ui.all.css')
+        css.unregisterResource('++resource++jquery.ui.all.css')
         csstool.cookResources()
         return
 

@@ -3,12 +3,13 @@
      i18n:domain="plone">
     <h5 class="hiddenStructure" i18n:translate="heading_sections">Sections</h5>
     <div id="ui-globalnav" class="ui-bottonset"
-    ><ul id="portal-globalnav" class="ui-state-default ui-corner-all"
+    ><ul id="portal-globalnav" class="ui-state-default"
         tal:define="selected_tab python:view.selected_portal_tab"
         ><tal:tabs tal:repeat="tab portal_tabs"
-        ><li tal:define="tid tab/id; selected python:selected_tab==tid and 'selected ui-button ui-corner-all ui-state-active' or 'plain ui-button ui-corner-all ui-state-default'"
+        ><li tal:define="tid tab/id; baseclass string: ui-state-default ui-button;
+                         selected python:selected_tab==tid and 'selected ui-state-active' or 'plain';"
              tal:attributes="id string:portaltab-${tid};
-                             class string:$selected ui-button ui-widget ui-state-default ui-botton-text-only;"
+                             class string:$selected $baseclass"
             ><a href="" class="ui-button-text"
                tal:content="tab/name"
                tal:attributes="href tab/url;

@@ -1,11 +1,11 @@
-<ul id="contentActionMenus" class="ui-state-default ui-corner-all"
+<ul id="contentActionMenus" class=""
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     xmlns:tal="http://xml.zope.org/namespaces/tal"
     tal:define="menu view/menu"
     tal:condition="view/available"
     i18n:domain="plone">
 
-    <li tal:repeat="menuItem menu" class="ui-button ui-state-default ui-corner-all">
+    <li tal:repeat="menuItem menu" class="ui-button ui-state-default ui-corner-bottom">
 
         <dl class="actionMenu deactivated"
             tal:attributes="id menuItem/extra/id"

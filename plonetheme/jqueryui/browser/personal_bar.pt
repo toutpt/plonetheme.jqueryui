@@ -15,9 +15,9 @@
   </dt>
   <dd class="actionMenuContent ui-helper-reset ui-state-default ui-corner-all">
     <ul>
-        <li tal:repeat="action view/user_actions"
+        <li tal:repeat="action view/user_actions" class=""
             tal:attributes="id string:personaltools-${action/id}">
-            <a href=""
+            <a href="" class="ui-state-default"
                tal:attributes="href action/url"
                tal:content="action/title"
                i18n:translate="">
@@ -29,7 +29,7 @@
   </tal:block>
 </dl>
 
-<dl class="actionMenu deactivated ui-helper-reset ui-state-default ui-corner-bottom" id="portal-personaltools"
+<dl class="actionMenu deactivated" id="portal-personaltools"
     tal:condition="view/anonymous">
   <dt id="anon-personalbar">
     <tal:actions repeat="action view/user_actions">

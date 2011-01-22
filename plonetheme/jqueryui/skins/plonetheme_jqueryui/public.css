@@ -103,6 +103,8 @@ ortal-header {
     font-size: 80%;
     /* ensure top navigation dont touches portlets, content etc.. #10491 */
     margin: 0 0 1em 0;
+    /* add this to remove border added by ui-state-XX*/
+    border-top:none; border-bottom:none;
 }
 #portal-globalnav li {
   margin-right:0px;
@@ -268,7 +270,7 @@ input.searchField {
     margin-right: 0.5em;
 }
 #portal-siteactions li a:hover {
-    color: #75ad0a
+/*    color: #75ad0a */
 }
 
 /* @end */
@@ -332,9 +334,6 @@ div.portletAssignments .managedPortletActions a {
 dl.portlet dt a:link,
 dl.portlet dt a:visited,
 dl.portlet dt a:hover {
-    color: black;
-    display: block;
-    border: none;
 }
 
 dl.portlet dd.portletItem,
@@ -455,24 +454,24 @@ dl.portlet {
 
 #content a:link,
 dl.portlet a:link {
-    color: #205c90;
+/*    color: #205c90;
     border-bottom: 0.1em solid #ccc;
-}
+*/}
 
 #content a:visited,
 dl.portlet a:visited {
-    color: #427597;
+/*    color: #427597;
     border-bottom: 0.1em solid #ccc;
-}
+*/}
 #content a:hover,
 dl.portlet a:hover {
-    color: #75ad0a !important; /* This one gets an !important because it should always activate in the content area, even when state coloring is active */
+/*    color: #75ad0a !important; /* This one gets an !important because it should always activate in the content area, even when state coloring is active */
 }
 #content a:target {
     background-color: #ffb;
 }
 #content span.link-external a {
-    background: transparent url(link_icon.png) 0px 1px no-repeat;
+/*    background: transparent url(link_icon.png) 0px 1px no-repeat;*/
     padding: 1px 0px 1px 16px;
 }
 
@@ -492,9 +491,6 @@ dl.portlet a:hover {
     -moz-border-radius: 0.5em;
 }
 #category a.link-category:hover {
-    background: #205c90;
-    color: White;
-    border-color: #205c90;
 }
 #category .separator {
     display: none;
@@ -746,9 +742,6 @@ div.listingBar a {
 }
 
 div.listingBar a:hover {
-    color: White;
-    background-color: #329fd7;
-    border-color: #329fd7;
 }
 
 /* @end */
@@ -888,7 +881,6 @@ div.listingBar a:hover {
     float: right;
     margin: 0;
     position: relative;
-    top: -0.23em;
     right:-0.24em;
     padding: 0.1em 0.24em 0 0;
 }
@@ -1369,7 +1361,7 @@ dl.enableFormTabbing dd {
     margin-top: 0.25em;
 }
 .searchSection label:hover {
-    color: Black;
+
 }
 .field {
     clear: both;
@@ -1715,10 +1707,8 @@ div.overlay label {
     margin-bottom: 0.25em;
 }
 div.overlay a:hover {
-    color: #75ad0a;
 }
 div.overlay a.selected {
-    color: #000000;
 }
 div.overlay .formTab {
     margin-right:1em;
@@ -1879,4 +1869,14 @@ div.overlay .formControls a {
     padding-left: 20px !important;
 }
 
+/* @end */
+
+/* Override some jqueryui stuff */
+
+.ui-state-active,
+.ui-state-hover,
+.ui-state-default{
+    border:none;
+}
+.ui-widget {font-size: 0.9em;}
 /* @end */

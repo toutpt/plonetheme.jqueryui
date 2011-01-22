@@ -6,8 +6,10 @@ in Plone and add the ability to manage your jqueryui themes (create remove updat
 
 JQueryUI javascript is already available with collective.js.jqueryui package.
 
-Notes
-=====
+Status
+======
+
+This add-on is unfinished
 
 A JQueryUI theme need more than just a css file. It needs images generated
 by the theme builder on jqueryui website.
