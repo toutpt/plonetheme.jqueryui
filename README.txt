@@ -9,7 +9,11 @@ JQueryUI javascript is already available with collective.js.jqueryui package.
 Status
 ======
 
-This add-on is unfinished
+This add-on under heavy development. It needs the next jqueryui widget: dropdown
+menu.
+
+Notes
+=====
 
 A JQueryUI theme need more than just a css file. It needs images generated
 by the theme builder on jqueryui website.
@@ -21,4 +25,3 @@ Features
 
 * manage jqueryui themes
 * activate plonetheme
-
