@@ -1,8 +1,7 @@
 Introduction
 ============
 
-This add-on is more than just a plone theme. It integrate the JQueryUI css framework
-in Plone and add the ability to manage your jqueryui themes (create remove update).
+This add-on integrates the JQueryUI css framework in Plone and add the ability
 
 JQueryUI javascript is already available with collective.js.jqueryui package.
 
